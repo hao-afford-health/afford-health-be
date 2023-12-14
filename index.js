@@ -7,6 +7,9 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cors());
 
+const healthRouter = require('./routes/health');
+app.use('/api/health', healthRouter);
+
 const convertRouter = require('./routes/convert');
 app.use('/api/convert', convertRouter);
 
